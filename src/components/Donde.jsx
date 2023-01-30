@@ -2,7 +2,10 @@ import React from "react";
 
 const Donde = () => {
   return (
-    <div className="flex flex-col items-center justify-center bg-gray-50 mt-9">
+    <div
+      id="donde"
+      className="flex flex-col items-center justify-center bg-gray-50 pt-9"
+    >
       <div className="mb-6 w-5/6 sm:w-3/4 md:w-2/5 lg:w-3/5 xl:w-5/6 xl:max-w-lg">
         <p className="text-3xl lg:text-4xl text-slate-700 pb-4 mb-4">
           El eventazo será en el casón de la Marquesa, en Las Fraguas.

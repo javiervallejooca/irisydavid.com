@@ -47,11 +47,13 @@ const Intro = () => {
         </div>
       </div>
       <div className="flex justify-center mt-10 absolute bottom-4">
-        <AiOutlineArrowDown
-          onClick={() => {}}
-          size={40}
-          className="animate-bounce"
-        />
+        <a href="#donde">
+          <AiOutlineArrowDown
+            onClick={() => {}}
+            size={40}
+            className="animate-bounce"
+          />
+        </a>
       </div>
     </div>
   );
