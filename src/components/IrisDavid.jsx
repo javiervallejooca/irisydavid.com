@@ -10,20 +10,24 @@ const IrisDavid = () => {
         </p>
         <p className="text-2xl mb-4">
           Siempre dispuestos a servir un buen musculopez o mal llamado Moscow
-          Mule, entre otros 1150 cócteles, con una sonrisa en el Hygee.
+          Mule, uno de los 1150 cócteles que tienen en su carta, con una sonrisa
+          en el Hygge.
         </p>
         <p className="text-2xl mb-4">
-          Bueno, esto de la sonrisa solo se podría aplicar para Iris, cuando
-          está por el bar claro...
+          Bueno, esto de la sonrisa solo se podría aplicar a Iris, cuando está
+          por el bar claro...
+        </p>
+        <p className="text-2xl mb-4">
+          Pero si no les pones cara, aquí van unas fotos de ellos...
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center bg-gray-100 pt-9 gap-8">
           <div>
-            <img src={david} title="El novio!!" alt="David de pequeño" />
             <span className="text-xl">El novio</span>
+            <img src={david} title="El novio!!" alt="David de pequeño" />
           </div>
           <div>
-            <img src={iris} title="La novia!!" alt="Iris de pequeña" />
             <span className="text-xl">La novia</span>
+            <img src={iris} title="La novia!!" alt="Iris de pequeña" />
           </div>
         </div>
       </div>

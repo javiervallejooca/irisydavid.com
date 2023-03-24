@@ -1,13 +1,20 @@
 import { useState, useEffect } from "react";
+
 import { AiOutlineArrowDown } from "react-icons/ai";
+import Confetti from "react-confetti";
 
 const Intro = () => {
   const [timeLeft, setTimeLeft] = useState("Calculando los días restantes...");
   const weddingDate = new Date("2023-09-30T13:00:00");
+  const [isExploding, setIsExploding] = useState(false);
 
   useEffect(() => {
     updateTime();
   }, [timeLeft]);
+
+  useEffect(() => {
+    setIsExploding();
+  }, []);
 
   const updateTime = () => {
     setInterval(calculateTime, 1000);
@@ -43,6 +50,12 @@ const Intro = () => {
           <p className="flex items-center justify-center text-2xl text-slate-600 text-center p-4 bg-slate-100 rounded-full shadow-md">
             {timeLeft}
           </p>
+          <Confetti
+            width={window.innerWidth}
+            height={window.innerHeight}
+            recycle={false}
+            numberOfPieces={600}
+          />
           <p className="text-2xl text-slate-800 mt-8">¡Baja que hay más!</p>
         </div>
       </div>
