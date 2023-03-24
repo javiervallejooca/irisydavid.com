@@ -4,6 +4,7 @@ import GoogleMap from "./components/GoogleMap/Index";
 import Gamberros from "./components/Gamberros";
 import Elora from "./components/Elora";
 import Footer from "./components/Footer";
+import IrisDavid from "./components/IrisDavid";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Donde />
         <GoogleMap />
         <Elora />
+        <IrisDavid />
         <Gamberros />
       </div>
       <Footer />
