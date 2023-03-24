@@ -16,7 +16,7 @@ const IrisDavid = () => {
           Bueno, esto de la sonrisa solo se podría aplicar para Iris, cuando
           está por el bar claro...
         </p>
-        <div className="flex items-center justify-center bg-gray-100 pt-9 gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-center bg-gray-100 pt-9 gap-8">
           <div>
             <img src={david} title="El novio!!" alt="David de pequeño" />
             <span className="text-xl">El novio</span>
