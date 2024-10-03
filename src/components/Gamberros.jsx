@@ -1,6 +1,10 @@
+import { useState } from "react";
 import cracks from "../img/repuesto.jpg";
+import autor from "../img/nahum.jpg";
 
 const Gamberros = () => {
+  const [display, setDisplay] = useState(false);
+
   return (
     <div className="flex flex-col items-center justify-center pt-9">
       <div className="mb-6 w-5/6 sm:w-3/4 md:w-3/4 lg:w-3/5">
@@ -19,6 +23,17 @@ const Gamberros = () => {
           title="Los mejores camareros que han pisado el Hygge"
           alt="Los mejores camareros que han pisado el Hygge"
         />
+        <p className="text-xl text-center">
+          PD: <b onClick={() => setDisplay(!display)}>Nahúm</b> se ha molestado
+          ya que no aparece como autor de la foto (haz click en su nombre y lo
+          conocerás)
+        </p>
+        {display && (
+          <div className="flex justify-center">
+            {" "}
+            <img src={autor} />{" "}
+          </div>
+        )}
       </div>
     </div>
   );

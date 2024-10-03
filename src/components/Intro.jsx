@@ -5,8 +5,12 @@ import Confetti from "react-confetti";
 
 const Intro = () => {
   const [timeLeft, setTimeLeft] = useState("Calculando los días restantes...");
-  const weddingDate = new Date("2023-09-30T13:00:00");
+  const weddingDate = new Date("2023-09-30T13:15:00");
   const [isExploding, setIsExploding] = useState(false);
+
+  const [hoursLeft, setHoursLeft] = useState("Calculando...");
+  const [minutesLeft, setMinutesLeft] = useState("Calculando...");
+  const [secondsLeft, setSecondsLeft] = useState("Calculando...");
 
   useEffect(() => {
     updateTime();
@@ -14,10 +18,16 @@ const Intro = () => {
 
   useEffect(() => {
     setIsExploding();
+    calculateHoursLeft();
+    calculateMinutesLeft();
+    calculateSecondsLeft();
   }, []);
 
   const updateTime = () => {
     setInterval(calculateTime, 1000);
+    setInterval(calculateHoursLeft, 59000);
+    setInterval(calculateMinutesLeft, 59000);
+    setInterval(calculateSecondsLeft, 1000);
   };
 
   const calculateTime = () => {
@@ -31,6 +41,26 @@ const Intro = () => {
     setTimeLeft(
       `Quedan ${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos`
     );
+  };
+
+  const calculateHoursLeft = () => {
+    let now = new Date().getTime();
+    let time = weddingDate - now;
+    let hours = Math.floor(time / (1000 * 60 * 60));
+    setHoursLeft(hours);
+  };
+  const calculateMinutesLeft = () => {
+    let now = new Date().getTime();
+    let time = weddingDate - now;
+    let minutes = Math.floor(time / (1000 * 60));
+    setMinutesLeft(minutes);
+  };
+
+  const calculateSecondsLeft = () => {
+    let now = new Date().getTime();
+    let time = weddingDate - now;
+    let seconds = Math.floor(time / 1000);
+    setSecondsLeft(seconds);
   };
 
   return (
@@ -49,6 +79,15 @@ const Intro = () => {
         <div className="pt-5 font-chula">
           <p className="flex items-center justify-center text-2xl text-slate-600 text-center p-4 bg-slate-100 rounded-full shadow-md">
             {timeLeft}
+          </p>
+          <p className="flex text-2xl text-slate-600 pt-4 pb-2">
+            Es decir, que quedan: {hoursLeft} horas.
+          </p>
+          <p className="flex text-2xl text-slate-600 py-2">
+            O se puede decir que se casan en {minutesLeft} minutos.
+          </p>
+          <p className="flex text-2xl text-slate-600 py-2">
+            Y si queremos ser superexactos... {secondsLeft} segundos.
           </p>
           <Confetti
             width={window.innerWidth}
